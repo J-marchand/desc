@@ -1,0 +1,30 @@
+/*** NAV ***/
+
+
+/*** CARD ***/
+.play_space_card
+{
+    width: 60%;
+    min-height: 50vh;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.play_space_card .fas
+{
+    font-size: 4em;
+}
+
+.play_card
+{
+    border: 2px solid black;
+
+    width: 60%;
+    margin: 20% auto;
+}
+
+.i
+{
+    display: flex;
+    align-items: center;
+}

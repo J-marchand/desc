@@ -1,0 +1,7 @@
+/*** HEADER ***/
+/** NAV **/
+.layout_header_nav_right li,
+.layout_header_nav_left li
+{
+    padding: 0 10px;
+}

@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="css/play.css">
+
+<div class="container">
+
+    <nav class="play_nav">
+        <ul class="normal-list fl-jc-b">
+            <li><a class="normal-link c-black" href="">Mes Likes</a></li>            
+            <li><a class="normal-link c-black" href="">Jouer</a></li>
+            <li><a class="normal-link c-black" href="">Messages</a></li>
+        </ul>
+    </nav>
+    <?php foreach($user as $users): ?>
+        <div class="play_space_card fl-jc-a">
+            <div class="i">
+
+                <form action="testmatch.php">
+                    <button class="normal-link c-black lr-p-20"><i class="fas fa-chevron-left"></i>
+                        <p>Dislike</p>            
+                    </button>
+                </form>
+            </div>  
+        
+            <div class="play_card p-20">
+
+            
+                    <div class="title t-a-center ud-p-20 uppercase">
+                        <h1><?= $users['first_name'] ?> (<?= $users['age'] ?>ans)</h1>
+                    </div>
+                    <div class="desc t-a-center ud-p-20">
+                        <p><?= $users['description'] ?></p>
+                    </div>
+                    <div class="about t-a-center ud-p-50">
+                        <a class="normal-link c-black" href="">en savoir plus</a>
+                    </div>
+                    <!-- <div class="about_more">
+                        <div class="quality">
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="like">
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div> -->                
+            </div>
+
+            <div class="i">
+                <form action="testmatch.php" method="POST">
+                    <input type="hidden" value="<?= $users['id']?>" name="liked_id">
+                    <button class="like_button normal-link c-black lr-p-20"><i class="fas fa-chevron-right"></i>
+                        <p>Like</p>            
+                    </button>               
+                </form>
+            </div>
+        
+        </div>
+    <?php endforeach ?>
+</div>

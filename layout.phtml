@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="FR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/auto-class.css">
+    <link rel="stylesheet" href="css/normalize-3.0.3.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+</head>
+<body>
+
+    <header class="layout_header">    
+        <nav class="layout_header_nav fl-jc-b">            
+            <div class="layout_header_nav_left normal-list fl-jc-b">
+                <li><a href="index.php">Acceuil</a></li>
+                <li><a href="play.php">Jouer</a></li>
+            </div>           
+        
+            <div class="layout_header_nav_right normal-list fl-jc-b">
+                <li><a href="register.php">Inscription</a></li>
+                <li><a href="login.php">Connexion</a></li>
+                <li><a href="logout.php">Deconnexion</a></li>
+            </div>      
+        </nav>
+    </header>
+
+    <main>
+        <?php include $template.'.phtml' ?>
+    </main>
+
+    <footer>
+        <p>je suis le footer</p>
+    </footer>
+</body>
+</html>
