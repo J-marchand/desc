@@ -15,14 +15,7 @@ if($_SESSION['genre'] == 'F') {
     $searchGender = 'H';
 }
 
-
-
-
-
 include 'application/bdd-connexion.php';
-
-
-
 
 $pdo->exec('SET NAME UTF8');
 
@@ -31,16 +24,42 @@ $query = $pdo->prepare
     'SELECT 
         *
     FROM 
-        users        
+        `users`  
+    INNER JOIN
+        `match`
+    ON
+        `users.id` = `liked_id`      
     WHERE 
-        gender = ?'
+        `gender` = ?
+    AND
+        `matched` != "waiting" '
 
 );
 
 $query->execute([ $searchGender ]);
 
-$user = $query->fetchAll(PDO::FETCH_ASSOC);
+$userMatch = $query->fetchAll(PDO::FETCH_ASSOC);
 
+var_dump($userMatch);
+
+if($userMatch == false){
+
+    $pdo->exec('SET NAME UTF8');
+
+    $query = $pdo->prepare
+    (
+        'SELECT 
+            *
+        FROM 
+            users  
+        WHERE 
+            gender = ?'
+    );
+
+    $query->execute([ $searchGender ]);
+
+    $userMatch = $query->fetchAll(PDO::FETCH_ASSOC);
+}
 
 
 
