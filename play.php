@@ -1,23 +1,10 @@
 <?php
-
-
-
 session_start();
 
-$searchGender = '';
-
-if($_SESSION['genre'] == 'H'){
-    $searchGender = 'F';
-
-} 
-
-if($_SESSION['genre'] == 'F') {
-    $searchGender = 'H';
-}
 
 include 'application/bdd-connexion.php';
 
-$pdo->exec('SET NAME UTF8');
+/*$pdo->exec('SET NAME UTF8');
 
 $query = $pdo->prepare
 (
@@ -39,27 +26,11 @@ $query = $pdo->prepare
 $query->execute([ $searchGender ]);
 
 $userMatch = $query->fetchAll(PDO::FETCH_ASSOC);
+*/
 
-var_dump($userMatch);
 
-if($userMatch == false){
 
-    $pdo->exec('SET NAME UTF8');
-
-    $query = $pdo->prepare
-    (
-        'SELECT 
-            *
-        FROM 
-            users  
-        WHERE 
-            gender = ?'
-    );
-
-    $query->execute([ $searchGender ]);
-
-    $userMatch = $query->fetchAll(PDO::FETCH_ASSOC);
-}
+ 
 
 
 
